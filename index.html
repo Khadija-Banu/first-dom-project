@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Project</title>
+
+    <!-- bootstrap CDN -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+     <style>
+        body{
+            margin-top: 100px;
+        }
+        section{
+            height: 400px;
+        }   
+        #first-col{
+            background-image: url(Image/1234.webp);
+            background-repeat: no-repeat;          
+        }       
+     </style>
+
+</head>
+<body>
+    <section style="background-color: aqua;">
+        <div class="container ">
+            <div class="row ">
+                <div class="col col-lg-6 col-md-6 mt-5 rounded-start-5" id="first-col">
+                    <div style="width: 150px; margin-left: 280px; margin-top: 100px;" class="input-group  ">
+                        <select class="form-select" id="select-field" >
+                          <option selected>Choose...</option>
+                          <option value="1">Male</option>
+                          <option value="2">Female</option>
+                        </select>
+                        <button id="check-button" class="btn btn-danger" type="button">Check</button>
+                      </div>
+
+                </div>
+                <div class="col col-lg-6 col-md-6 mt-5 ">
+                    <!-- <h2 id="image-field"></h2> -->
+                    <img id="image-field" class="img-fluid rounded-end-5" style="height: 300px; width: 480px;" src="Image/male/11.jpg" alt="" srcset="">
+
+                </div>
+            </div>
+        </div>
+    </section>
+  
+<!-- JavaScript CDN -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+<script>
+    document.getElementById('check-button').addEventListener('click',function(){
+        const selectField=document.getElementById('select-field');
+      
+     
+        const selectText=selectField.value;
+        if(selectText==1){
+            const img = document.createElement("img");
+                img.src = "Image/male/22.jpg";
+                img.style.height="300px";
+                img.style.width="470px";
+                img.style.borderTopRightRadius = "25px";
+                img.style.borderBottomRightRadius = "25px";
+                var src = document.getElementById("image-field");          
+                src.appendChild(img);
+        }
+        else if(selectText==2){
+            const img = document.createElement("img");
+                img.src = "Image/female/2.jpg";
+                img.style.height="300px";
+                img.style.width="470px";
+                img.style.borderTopRightRadius = "25px";
+                img.style.borderBottomRightRadius = "25px";
+                var src = document.getElementById("image-field");          
+                src.appendChild(img);
+        }
+        }
+    )
+</script>
+</body>
+</html>
